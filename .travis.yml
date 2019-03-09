@@ -36,7 +36,7 @@ jobs:
         - docker logs server
     - name: "Build Tests"
       script: ./test/build/test_userbuild.sh
-      before_deploy: ./bin/build.sh dist/.htaccess htaccess.conf
+      before_deploy: ./bin/build.sh dist/.htaccess bin/htaccess.conf
       deploy:
         - provider: releases
           api_key: $GITHUB_API_TOKEN
